@@ -474,3 +474,16 @@ button {
         font-size: 15px;
     }
 }
+.reading-image {
+    text-align: center;
+    margin: 20px auto;
+    padding: 10px;
+}
+
+.reading-image img {
+    max-width: 100%;
+    width: 650px;
+    height: auto;
+    border-radius: 12px;
+    object-fit: contain;
+}
