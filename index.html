@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оқу сауаттылығы</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+
+        <!-- Басты экран -->
+        <header class="header">
+            <div class="header-label">ОҚУ САУАТТЫЛЫҒЫ</div>
+        </header>
+
+        <main id="main-content">
+
+            <!-- Бастапқы бет -->
+            <section id="welcome-screen" class="screen active">
+
+                <div class="welcome-content">
+                    <div class="welcome-icon">📚</div>
+
+                    <h1>Оқу сауаттылығы</h1>
+
+                    <p class="subtitle">
+                        5–6 сынып оқушыларына арналған
+                        интерактивті тапсырмалар платформасы
+                    </p>
+
+                    <div class="role-selection">
+
+                        <button class="role-card student-card"
+                                onclick="selectRole('student')">
+                            <div class="role-icon">🎓</div>
+                            <h2>Оқушы</h2>
+                            <p>Мәтіндерді оқып, тапсырмаларды орындау</p>
+                        </button>
+
+                        <button class="role-card teacher-card"
+                                onclick="selectRole('teacher')">
+                            <div class="role-icon">👩‍🏫</div>
+                            <h2>Мұғалім</h2>
+                            <p>Оқушылардың нәтижелерін тексеру</p>
+                        </button>
+
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Оқушы кіру бөлімі -->
+            <section id="student-login" class="screen">
+
+                <div class="form-card">
+
+                    <button class="back-button" onclick="goBack()">
+                        ← Артқа
+                    </button>
+
+                    <h2>Оқушы туралы мәлімет</h2>
+
+                    <label for="student-name">Аты-жөні</label>
+                    <input type="text" id="student-name"
+                           placeholder="Аты-жөніңізді енгізіңіз">
+
+                    <label for="student-class">Сыныбы</label>
+                    <select id="student-class">
+                        <option value="">Сыныпты таңдаңыз</option>
+                        <option>5-сынып</option>
+                        <option>6-сынып</option>
+                    </select>
+
+                    <button class="primary-button"
+                            onclick="startStudent()">
+                        Жалғастыру →
+                    </button>
+
+                </div>
+
+            </section>
+
+            <!-- Мұғалім кіру бөлімі -->
+            <section id="teacher-login" class="screen">
+
+                <div class="form-card">
+
+                    <button class="back-button" onclick="goBack()">
+                        ← Артқа
+                    </button>
+
+                    <h2>Мұғалім бөлімі</h2>
+
+                    <label for="teacher-code">Құпия код</label>
+                    <input type="password" id="teacher-code"
+                           placeholder="Құпия кодты енгізіңіз">
+
+                    <button class="primary-button"
+                            onclick="loginTeacher()">
+                        Кіру →
+                    </button>
+
+                    <p id="teacher-error" class="error-message"></p>
+
+                </div>
+
+            </section>
+
+            <!-- Мәтін таңдау бөлімі -->
+            <section id="texts-screen" class="screen">
+
+                <div class="section-heading">
+                    <h2>Оқу мәтінін таңдаңыз</h2>
+                    <p>Мәтінді оқып, тапсырмаларды орындаңыз</p>
+                </div>
+
+                <div id="texts-list" class="texts-grid"></div>
+
+            </section>
+
+            <!-- Мәтін және тапсырмалар -->
+            <section id="reading-screen" class="screen">
+
+                <div id="reading-content"></div>
+
+            </section>
+
+            <!-- Мұғалім панелі -->
+            <section id="teacher-panel" class="screen">
+
+                <div id="teacher-content"></div>
+
+            </section>
+
+        </main>
+
+        <footer class="footer">
+            <p>FK Academy.kz</p>
+            <p>Оқу сауаттылығын дамыту платформасы</p>
+        </footer>
+
+    </div>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
